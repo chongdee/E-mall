@@ -1,0 +1,57 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/category/category",
+        "pages/goods-list/goods-list", 
+        "pages/goods-detail/goods-detail",
+        "pages/cart/cart",
+        "pages/favorite/favorite",
+        "pages/order/order",
+        "pages/search/search",
+        "pages/user/user",
+        "pages/feedback/feedback",
+        "pages/login/login",
+        "pages/auth/auth",
+        "pages/pay/pay"
+
+    ],
+    "tabBar": {
+        "color": "#999",
+        "selectedColor": "#d81e06",
+        "backgroundColor": "#fafafa",
+        "position": "bottom",
+        "borderStyle": "black",
+        "list": [{
+                "pagePath": "pages/index/index",
+                "text": "首页",
+                "iconPath": "/styles/tabbar-icon/home.png",
+                "selectedIconPath": "/styles/tabbar-icon/_home.png"
+            },
+            {
+                "pagePath": "pages/category/category",
+                "text": "分类",
+                "iconPath": "/styles/tabbar-icon/category.png",
+                "selectedIconPath": "/styles/tabbar-icon/_category.png"
+            }, {
+                "pagePath": "pages/cart/cart",
+                "text": "购物车",
+                "iconPath": "/styles/tabbar-icon/cart.png",
+                "selectedIconPath": "/styles/tabbar-icon/_cart.png"
+            }, {
+                "pagePath": "pages/user/user",
+                "text": "我的",
+                "iconPath": "/styles/tabbar-icon/profile.png",
+                "selectedIconPath": "/styles/tabbar-icon/_profile.png"
+            }
+        ]
+    },
+
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#d81e06",
+        "navigationBarTitleText": "YGmall",
+        "navigationBarTextStyle": "white"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}

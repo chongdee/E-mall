@@ -1,0 +1,30 @@
+/**app.wxss**/
+
+@import './styles/iconfont.wxss';
+
+/* 样式reset 小程序不支持通配符'*'  */
+
+page,
+view,
+text,
+swiper,
+swiper-item,
+image,
+navigator {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* 主题颜色 通过变量来实现
+1.通过less 定义变量
+2.原生的css和wxss也支持变量
+*/
+
+page {
+    /* 定义主题颜色 */
+    --themeColor: #d81e06;
+    /* 假设设计稿 大小是375px   1px = 2rpx */
+    font-size: 28rpx;
+}

@@ -1,0 +1,51 @@
+page{
+  height: 100%;
+}
+.cate-box{
+  height: 100%;
+  .scroll-view-box{
+    // less中 calc的写法跟原生css不一样
+    // 滚动除了设置属性scroll-y,一定给高度才能实现 
+    height: ~'calc(100vh - 90rpx)';
+    display: flex;
+    .left-menu{
+      flex: 2;
+      
+      .menu-item{
+        height: 80rpx;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 30rpx;
+      }
+      .active{
+        color:var(--themeColor);
+        border-left: 10rpx solid currentColor;
+      }
+    }
+    .right-content{
+      flex: 5;
+      .goods-item{
+        .goods-title{
+          height: 80rpx;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .goods-list{
+          display: flex;
+          flex-wrap: wrap;
+          navigator{
+            width: 33.33%;
+            text-align: center;
+            image{
+              width: 50%;
+            }
+          }
+        }
+      }
+
+    }
+  }
+ 
+}

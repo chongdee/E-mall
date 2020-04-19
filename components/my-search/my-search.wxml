@@ -1,0 +1,6 @@
+<view class="search-box">
+  <navigator url="/pages/search/search" open-type="navigate">
+    <text class="iconfont  iconsearch"></text>搜索
+  </navigator>
+  
+</view>

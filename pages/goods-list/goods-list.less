@@ -1,0 +1,31 @@
+/* pages/goods-list/goods-list.wxss */
+.first-tab{
+  .goods-item{
+    display: flex;
+    border-bottom: 2rpx solid #ccc;
+    .img-box{
+      flex:2;
+      image{
+        width: 100%;
+      }
+    }
+    .goods-info-box{
+      flex: 3;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      margin-left: 20rpx;
+      .goods-name{
+        // 文字后面出现的...设置
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+      }
+      .goods-price{
+        color:var(--themeColor);
+        font-size: 32rpx;
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+<!-- 收货地址 -->
+<view class="receive-addr-box">
+  <!-- 当收货地址不存在 按钮显示 -->
+  <view class="addr-btn" wx:if="{{!address.userName}}">
+    <button bindtap="onChooseAddr" type="primary" plain="{{true}}">收货地址</button>
+  </view>
+  <!-- 当收货地址存在 显示详细地址 -->
+  <view wx:else class="user-info-box">
+    <view class="user-info">
+      <view>收货人{{address.userName}}</view>
+      <view>{{address.provinceName+address.cityName+address.countyName+address.detailInfo}}</view>
+      
+    </view>
+    <view class="user-phone">{{address.telNumber}}</view>
+  </view>
+</view>
+
+<!-- 购物车列表内容 -->
+<view class="cart-box">
+  <view class="cart-title">购物车</view>
+  <view class="cart-content">
+    <block wx:if="{{cart.length!==0}}">
+            <view class="cart-item" wx:for="{{cart}}" wx:key="goods_id">
+        <!-- 复选框 -->
+        <view class="cart-chk-box">
+          <checkbox-group data-id="{{item.goods_id}}" bindchange="onItemChecked">
+            <checkbox checked="{{item.checked}}" />
+          </checkbox-group>
+        </view>
+        <!-- 商品图片 -->
+        <navigator class="cart-img-box">
+          <image mode="widthFix" src="{{item.goods_small_logo}}" />
+        </navigator>
+        <!-- 商品信息 -->
+        <view class="cart-info-box">
+          <view class="goods-name">{{item.goods_name}}</view>
+          <view class="goods-price-box">
+            <view class="goods-price">￥{{item.goods_price}}</view>
+            <view class="num-tool-box">
+              <view bindtap="onNumOperate" data-id="{{item.goods_id}}" data-operate="{{-1}}" class="num-edit">
+                -
+              </view>
+              <view class="goods-num">{{item.num}}</view>
+              <view bindtap="onNumOperate" data-id="{{item.goods_id}}" data-operate="{{1}}" class="num-edit">
+                +
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <image style="width:100%"  mode="widthFix" src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1587209582952&di=6c276203bb929f20c9ed4f22a3fde4b8&imgtype=0&src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F05%2F23%2F0d2019a7ca7937adaf34a3b15fd7b92e.jpg">    
+      </image>
+    </block>
+  </view>
+</view>
+
+<!-- 底部工具栏 -->
+<view class="footer-tool">
+  <!-- 全选 -->
+  <view class="all-chk-box">
+    <checkbox-group bindchange="onCheckAll">
+      <checkbox checked="{{CheckedAll}}" /> 全选
+    </checkbox-group>
+  </view>
+  <!-- 总价格 -->
+  <view class="total-price-box">
+    <view class="total-price">
+      合计: <text class="total-price-text">￥{{totalPrice}}</text>
+    </view>
+    <view >包含运费</view>
+  </view>
+  <!-- 结算 -->
+  <view class="order-pay-box" bindtap="onPay">
+    结算({{totalNum}})
+  </view>
+</view>
