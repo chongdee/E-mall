@@ -1,1 +1,115 @@
-/* pages/user/user.wxss */
+page {
+  background-color: #edece8;
+  color: #666;
+}
+.user-info-box {
+  height: 45vh;
+  background-color: var(--themeColor);
+  overflow: hidden;
+  position: relative;
+}
+.user-info-box .user-img-box {
+  position: relative;
+}
+.user-info-box .user-img-box .user-bg {
+  height: 50vh;
+  filter: blur(10rpx);
+}
+.user-info-box .user-img-box .user-info {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 22%;
+  text-align: center;
+}
+.user-info-box .user-img-box .user-info .user-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+.user-info-box .user-img-box .user-info .user-name {
+  color: #fff;
+  margin-top: 40rpx;
+  font-size: 40rpx;
+}
+.user-info-box .user-btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 30%;
+  border: 1rpx solid #07c160;
+  color: #07c160;
+  font-size: 30rpx;
+  width: 150rpx;
+  height: 80rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10rpx;
+}
+.user-conten-box {
+  position: relative;
+}
+.user-conten-box .user-content {
+  position: absolute;
+  width: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -30rpx;
+  padding-bottom: 40rpx;
+}
+.user-conten-box .user-content .history-box {
+  background-color: #fff;
+  display: flex;
+}
+.user-conten-box .user-content .history-box navigator {
+  flex: 1;
+  padding: 10rpx 0;
+  text-align: center;
+}
+.user-conten-box .user-content .history-box navigator .history-num {
+  color: var(--themeColor);
+}
+.user-conten-box .user-content .order-box {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.user-conten-box .user-content .order-box .order-title {
+  padding: 20rpx;
+  border-bottom: 1rpx solid #ccc;
+  font-size: 28rpx;
+}
+.user-conten-box .user-content .order-box .order-content {
+  display: flex;
+}
+.user-conten-box .user-content .order-box .order-content navigator {
+  flex: 1;
+  text-align: center;
+  padding: 15rpx 0;
+}
+.user-conten-box .user-content .order-box .order-content navigator .iconfont {
+  color: var(--themeColor);
+  font-size: 40rpx;
+}
+.user-conten-box .user-content .addr-box {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}
+.user-conten-box .user-content .app-info-box {
+  margin-top: 20rpx;
+}
+.user-conten-box .user-content .app-info-box .app-info-item {
+  padding: 20rpx;
+  background-color: #fff;
+  border-bottom: 3rpx solid #ccc;
+}
+.user-conten-box .user-content .app-info-box .app-info-contact {
+  display: flex;
+  justify-content: space-between;
+}
+.user-conten-box .user-content .recommend-box {
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 20rpx;
+}

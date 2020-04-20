@@ -28,3 +28,7 @@ page {
     /* 假设设计稿 大小是375px   1px = 2rpx */
     font-size: 28rpx;
 }
+
+image {
+    width: 100%;
+}

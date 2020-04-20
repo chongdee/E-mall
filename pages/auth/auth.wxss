@@ -1,1 +1,6 @@
 /* pages/auth/auth.wxss */
+
+button.btn:not([size='mini']) {
+    width: 80%;
+    margin-top: 60rpx;
+}

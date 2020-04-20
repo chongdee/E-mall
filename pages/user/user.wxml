@@ -1,2 +1,82 @@
-<!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="user-info-box">
+  <view wx:if="{{userInfo.nickName}}" class="user-img-box">
+    <image class="user-bg" src="{{userInfo.avatarUrl}}"></image>
+    <view class="user-info">
+      <image class="user-avatar" src="{{userInfo.avatarUrl}}"></image>
+      <view class="user-name">{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view wx:else class="user-btn">
+    <navigator url="/pages/login/login">
+      登录
+    </navigator>
+  </view>
+</view>
+
+<!-- 用户内容 -->
+<view class="user-conten-box">
+  <view class="user-content">
+    <!-- 足迹 -->
+    <view class="history-box">
+      <navigator >
+        <view class="history-num">0</view>
+        <view class="history-name">收藏的店铺</view>
+      </navigator>
+      <navigator>
+        <view class="history-num">0</view>
+        <view class="history-name">收藏的商品</view>
+      </navigator>
+      <navigator>
+        <view class="history-num">0</view>
+        <view class="history-name">关注的商品</view>
+      </navigator>
+      <navigator>
+        <view class="history-num">0</view>
+        <view class="history-name">我的足迹</view>
+      </navigator>
+    </view>
+    <!-- 我的订单 -->
+    <view class="order-box">
+      <view class="order-title">我的订单</view>
+      <view class="order-content">
+        <navigator url="/pages/order/order?type=1">
+          <view class="iconfont iconding_dan"></view>
+          <view class="order-name">全部订单</view>
+        </navigator>
+        <navigator url="/pages/order/order?type=2">
+          <view class="iconfont  iconpay"></view>
+          <view class="order-name">待付款</view>
+        </navigator>
+        <navigator url="/pages/order/order?type=3">
+          <view class="iconfont  iconreceipt-address"></view>
+          <view class="order-name">待收货</view>
+        </navigator>
+        <navigator >
+          <view class="iconfont icontuihuotuikuan_dianpu"></view>
+          <view class="order-name">退款/退货</view>
+        </navigator>
+      </view>
+    </view>
+    <!-- 收货地址管理 -->
+    <view class="addr-box">收货地址管理</view>
+    <!-- 应用信息相关 -->
+    <view class="app-info-box">
+      <view class="app-info-item app-info-contact">
+        <text >联系客服</text>
+        <text >400-800-8888</text>
+      </view>
+      <view class="app-info-item">
+        意见反馈
+      </view>
+      <view class="app-info-item">
+        关于我们
+      </view>
+    </view>
+    <!-- app推荐 -->
+    <view class="recommend-box">
+      把应用推荐给其他人
+    </view>
+  </view>
+</view>
+
+

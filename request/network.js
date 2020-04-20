@@ -16,7 +16,9 @@ export default function request(options) {
             method: options.method || 'GET',
             dataType: options.dataType || 'json',
             responseType: options.responseType || 'text',
-            success: reslove,
+            success: (res => {
+                reslove(res)
+            }),
             fail: (err => {
                 reject(err)
             }),

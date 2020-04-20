@@ -2,5 +2,5 @@
     "usingComponents": {
         "my-search": "/components/my-search/my-search"
     },
-    "navigationBarTitleText": "YGmall"
+    "navigationBarTitleText": "购物商城"
 }
