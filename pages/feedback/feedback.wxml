@@ -1,2 +1,41 @@
-<!--pages/feedback/feedback.wxml-->
-<text>pages/feedback/feedback.wxml</text>
+
+<my-tabs 
+tabs="{{tabs}}" 
+bindtabschange="onTabsChange"
+>
+  <view class="fb-box">
+    <view class="fb-title">问题的种类</view>
+    <view class="fb-tips">
+      <text >功能建议</text>
+      <text >购买遇到问题</text>
+      <text >性能问题</text>
+      <text >其他</text>
+    </view>
+    <view class="fb-content-box">
+      <textarea value="{{textAreaVal}}" bindinput="onTextVal" placeholder="请描述一下您的问题">
+        
+      </textarea>
+      <view class="fb-tool">
+        <button bindtap="onChooseImg">+</button>
+        <view class="uploadimg-item"
+        wx:for="{{chooseImgs}}"
+        wx:key="*this" 
+        bindtap="onRemoveImg"
+        data-index="{{index}}"
+        >
+          <my-uploadimg src="{{item}}"></my-uploadimg>
+        </view>
+       
+      
+      </view>
+    </view>
+    <view class="form-btn-box">
+      <button type="warn" bindtap="onSubmit">
+        <icon class="" type="success_no_circle" size="23" color="white">
+          
+        </icon>  
+        提交
+      </button>
+    </view>
+  </view>
+</my-tabs>

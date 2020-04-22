@@ -20,8 +20,14 @@ Page({
         request({
             url: '/home/swiperdata'
         }).then(res => {
+            console.log(res);
+
+            let result = res.data.message
+                // 接口不一样才作以下替换处理
+            result.forEach(v => v.navigator_url = v.navigator_url.replace('main', 'goods-detail'))
+            result.forEach(v => v.navigator_url = v.navigator_url.replace('goods_detail', 'goods-detail'))
             this.setData({
-                swiperList: res.data.message
+                swiperList: result
             })
 
         })
@@ -32,9 +38,11 @@ Page({
             url: '/home/catitems'
         }).then(res => {
             console.log(res);
+            let result = res.data.message;
+            //     // 接口不一样才作以下替换处理
 
             this.setData({
-                cateNavList: res.data.message
+                cateNavList: result
             })
 
         })

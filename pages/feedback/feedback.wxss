@@ -1,1 +1,65 @@
-/* pages/feedback/feedback.wxss */
+page {
+  background-color: #f3f4f6;
+}
+.fb-box {
+  padding: 20rpx;
+  color: #666;
+}
+.fb-box .fb-tips {
+  display: flex;
+  flex-wrap: wrap;
+}
+.fb-box .fb-tips text {
+  width: 30%;
+  padding: 10rpx;
+  text-align: center;
+  background-color: #fff;
+  margin: 20rpx 10rpx;
+}
+.fb-box .fb-content-box {
+  background-color: #fff;
+  margin-top: 20rpx;
+}
+.fb-box .fb-content-box textarea {
+  padding: 10rpx;
+  width: 100%;
+}
+.fb-box .fb-content-box .fb-tool {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 22rpx;
+}
+.fb-box .fb-content-box .fb-tool button {
+  width: 90rpx;
+  height: 90rpx;
+  padding: 0;
+  border: 1rpx solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #666;
+  margin: 0;
+  margin-left: 20rpx;
+  margin-bottom: 20rpx;
+}
+.fb-box .fb-content-box .fb-tool .uploadimg-item {
+  margin-left: 20rpx;
+}
+.fb-box .form-btn-box {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40rpx;
+}
+.fb-box .form-btn-box button {
+  background-color: var(--themeColor);
+  color: #fff;
+  margin: 0;
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: normal;
+}
+.fb-box .form-btn-box button icon {
+  margin-right: 10rpx;
+}

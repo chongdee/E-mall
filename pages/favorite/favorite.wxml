@@ -1,2 +1,22 @@
-<!--pages/favorite/favorite.wxml-->
-<text>pages/favorite/favorite.wxml</text>
+<my-tabs tabs="{{tabs}}" bindtabschange="onTabsChange">
+  <view class="favorite-box">
+    <view class="favorite-title-box">
+      <text class="favorite-title active">全部</text>
+      <text class="favorite-title">正在热卖</text>
+      <text class="favorite-title">即将上线</text>
+    </view>
+    <view class="favorite-content">
+      <navigator class="goods-item" wx:for="{{favorite}}" wx:key="goods_id" url="/pages/goods-detail/goods-detail?goods_id={{item.goods_id}}">
+        <!-- 左侧 -->
+        <view class="img-box">
+          <image src="{{item.goods_small_logo?item.goods_small_logo:'https://ww1.sinaimg.cn/large/007rAy9hgy1g24by9t530j30i20i2glm.jpg'}}" mode="widthFix"></image>
+        </view>
+        <!-- 右侧 -->
+        <view class="goods-info-box">
+          <view class="goods-name">{{item.goods_name}}</view>
+          <view class="goods-price">￥{{item.goods_price}}</view>
+        </view>
+      </navigator>
+    </view>
+  </view>
+</my-tabs>

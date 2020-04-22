@@ -1,2 +1,18 @@
-<!--pages/search/search.wxml-->
-<text>pages/search/search.wxml</text>
+<view class="search-box">
+  <input value="{{inptVal}}" placeholder="请输入您需要搜索的商品" bindinput="onInput" />
+  <button  hidden="{{!isShowCancelBtn}}" bindtap="onCancel">取消</button>
+</view>
+<view class="search-content">
+  <!-- <view class="search-item">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius atque facilis id alias praesentium dignissimos illum nihil optio quis! Debitis odio, magnam iusto quas labore voluptatibus excepturi unde voluptates expedita.</view>
+  <view class="search-item">
+    Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eius atque facilis id alias praesentium dignissimos illum nihil optio quis! Debitis odio, magnam iusto quas labore voluptatibus excepturi unde voluptates expedita.
+  </view> -->
+  <navigator
+    class="search-item"
+    wx:for="{{goods}}"
+    wx:key="goods_id"
+    url="/pages/goods-detail/goods-detail?goods_id={{item.goods_id}}"
+  >
+  {{item.goods_name}}
+  </navigator>
+</view>

@@ -9,8 +9,8 @@
   <view class="goods-price">￥{{goodsObj.goods_price}}</view>
   <view class="goods-desc-box">
     <view class="goods-name">{{goodsObj.goods_name}}</view>
-    <view class="favorite-box">
-      <text class="iconfont  iconandroidfavoriteoutline"></text>
+    <view class="favorite-box" bindtap="onClickFavorite">
+      <text class="iconfont {{isFavorite?'iconicon_favorite':'iconandroidfavoriteoutline'}} "></text>
       <view class="favtext">收藏</view>
     </view>
   </view>

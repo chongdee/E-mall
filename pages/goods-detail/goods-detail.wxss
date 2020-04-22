@@ -22,10 +22,10 @@ page {
   flex: 5;
   color: #000;
   font-size: 28rpx;
-  padding: 10rpx;
+  padding: 10rpx 10rpx 10rpx 20rpx;
   display: -webkit-box;
   overflow: hidden;
-  -moz-box-orient: vertical;
+  -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
 }
 .goods-info-box .goods-desc-box .favorite-box {
@@ -35,6 +35,10 @@ page {
   justify-content: center;
   align-items: center;
   border-left: 2rpx solid #bbb;
+}
+.goods-info-box .goods-desc-box .favorite-box .iconicon_favorite {
+  color: var(--themeColor);
+  background-color: #fff;
 }
 .info-detail-box .info-detail-title {
   font-size: 32rpx;

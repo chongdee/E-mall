@@ -22,8 +22,8 @@
         <view class="history-num">0</view>
         <view class="history-name">收藏的店铺</view>
       </navigator>
-      <navigator>
-        <view class="history-num">0</view>
+      <navigator url="/pages/favorite/favorite">
+        <view class="history-num">{{favoriteNum}}</view>
         <view class="history-name">收藏的商品</view>
       </navigator>
       <navigator>
@@ -65,9 +65,9 @@
         <text >联系客服</text>
         <text >400-800-8888</text>
       </view>
-      <view class="app-info-item">
+      <navigator url="/pages/feedback/feedback" class="app-info-item">
         意见反馈
-      </view>
+      </navigator>
       <view class="app-info-item">
         关于我们
       </view>

@@ -1,66 +1,65 @@
 // pages/search/search.js
+// 函数防抖  定时器
+// 1 防抖 一般  作用在输入框中 防止重复输入 重复发送请求
+// 2 节流 一般用在页面上拉和下拉
+
+import request from '../../request/network'
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+    data: {
+        goods: [],
+        //取消按钮是否显示
+        isShowCancelBtn: false,
 
-  },
+        // 输入框的值
+        inptVal: ''
+    },
+    TimeId: -1,
+    //输入框事件
+    onInput(e) {
+        console.log(e);
+        const { value } = e.detail;
+        if (!value.trim()) {
+            this.setData({
+                goods: [],
+                isShowCancelBtn: false
+            })
+            return;
+        }
+        //取消按钮显示
+        this.setData({
+                isShowCancelBtn: true
+            })
+            //防抖避免输入框每输入一个文字发送一次请求
+        clearTimeout(this.TimeId);
+        this.TimeId = setTimeout(() => {
+            this.qsearch(value)
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+        }, 1000);
 
-  },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    },
 
-  },
+    qsearch(query) {
+        request({
+            url: '/goods/search',
+            data: query
+        }).then(res => {
+            console.log(res);
+            let { goods } = res.data.message
+            this.setData({
+                goods
+            })
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+        })
+    },
+    // 点击取消按钮
+    onCancel() {
+        this.setData({
+            inptVal: '',
+            isShowCancelBtn: false,
+            goods: []
+        })
+    }
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })

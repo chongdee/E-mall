@@ -35,7 +35,8 @@ Page({
     onLoad: function(options) {
         // options能拿到上页跳转传递过来的页面参数{cid: "5"}
         console.log(options);
-        this.queryParams.cid = options.cid
+        this.queryParams.cid = options.cid || '';
+        this.queryParams.query = options.query || '';
         this.getGoodsList()
     },
     // ---------------------事件监听函数---------------------------
