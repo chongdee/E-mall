@@ -107,6 +107,14 @@ page {
 .user-conten-box .user-content .app-info-box .app-info-contact {
   display: flex;
   justify-content: space-between;
+  position: relative;
+}
+.user-conten-box .user-content .app-info-box .app-info-contact button {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  margin: 0;
 }
 .user-conten-box .user-content .recommend-box {
   margin-top: 20rpx;

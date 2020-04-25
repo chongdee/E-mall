@@ -42,11 +42,11 @@ Page({
 
     qsearch(query) {
         request({
-            url: '/goods/search',
-            data: query
+            url: '/goods/qsearch',
+            data: { query }
         }).then(res => {
             console.log(res);
-            let { goods } = res.data.message
+            let goods = res.data.message
             this.setData({
                 goods
             })
